@@ -1,0 +1,65 @@
+/* .App {
+  text-align: center;
+} */
+
+.bg-image {
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.content span {
+  color: #01674d;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: #fb8d61;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #db6a39;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
