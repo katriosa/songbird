@@ -1,4 +1,15 @@
+import HeaderLevels from "../components/HeaderLevels";
+import SecretBlock from "../components/SecretBlock";
+import VariantSelectView from "../components/VariantSelectView/VariantSelectView";
+import Wrapper from "../UI/Wrapper";
+
 const GamePage = () => {
-  return <h1>Game</h1>;
+  return (
+    <Wrapper>
+      <HeaderLevels />
+      <SecretBlock />
+      <VariantSelectView />
+    </Wrapper>
+  );
 };
 export default GamePage;

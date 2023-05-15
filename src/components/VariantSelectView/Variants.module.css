@@ -1,0 +1,47 @@
+.wrapper {
+  max-width: 60rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.list {
+  width: 30rem;
+  height: 12rem;
+  background-color: #282c34;
+  border-radius: 5px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+.list li {
+  margin: 0;
+  border: 2px solid #707070;
+  background-color: #4b5262;
+  border-radius: 5px;
+  padding: 0.5rem 3rem;
+}
+
+.button {
+  width: 30rem;
+  background-color: blue;
+}
+
+.button a {
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  background-color: #9a3009;
+  border: none;
+  border-radius: 5px;
+  color: beige;
+  cursor: pointer;
+}
+
+.button a:hover {
+  background-color: #db6a39;
+}

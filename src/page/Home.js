@@ -1,4 +1,5 @@
 import classes from "./Home.module.css";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
@@ -10,7 +11,7 @@ const Homepage = () => {
           <h1>
             Угадай <span>птичку</span> по голосу
           </h1>
-          <button>Начать</button>
+          <Link to="/game">Начать</Link>
         </div>
       </main>
       <footer className={classes.footer}>

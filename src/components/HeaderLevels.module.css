@@ -1,0 +1,15 @@
+.levels {
+  list-style: none;
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: center;
+  margin: 0;
+  gap: 1rem;
+}
+
+.levels li {
+  background-color: #009a76;
+  border-radius: 5px;
+  color: white;
+  padding: 0.5rem 1rem;
+}

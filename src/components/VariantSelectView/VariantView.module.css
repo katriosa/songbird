@@ -1,0 +1,25 @@
+.wrapper {
+  width: 30rem;
+  background-color: #282c34;
+  border-radius: 5px;
+  padding: 0 2rem;
+}
+.float {
+  width: 150px;
+  height: 110px;
+  float: right;
+  margin-bottom: 0.5rem;
+}
+
+.float img {
+  width: 100%;
+}
+.text {
+  margin-bottom: 1rem;
+}
+.species {
+  font-style: italic;
+}
+.wrapper audio {
+  margin-bottom: 1rem;
+}

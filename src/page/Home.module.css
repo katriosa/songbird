@@ -26,7 +26,8 @@
   color: #01674d;
 }
 
-button {
+.content a {
+  text-decoration: none;
   font-size: 1.5rem;
   padding: 1rem 2rem;
   background-color: #fb8d61;
@@ -34,10 +35,9 @@ button {
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
 }
 
-button:hover {
+.content a:hover {
   background-color: #db6a39;
 }
 .footer {
