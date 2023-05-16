@@ -1,0 +1,44 @@
+.wrapper {
+  background-color: #282c34;
+  border-radius: 5px;
+  padding: 2rem;
+  width: 40rem;
+  margin: 2rem auto;
+  position: relative;
+}
+.float {
+  width: 300px;
+  height: 220px;
+  float: right;
+  margin-bottom: 3rem;
+}
+
+.float img {
+  width: 100%;
+}
+.text {
+  margin-bottom: 2rem;
+}
+.species {
+  font-style: italic;
+}
+.wrapper audio {
+  margin-bottom: 2rem;
+}
+.arrow {
+  background-size: cover;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.arrow-left {
+  background-image: url("../assets/arrow-left.png");
+  left: -5rem;
+}
+.arrow-right {
+  background-image: url("../assets/arrow-right.png");
+  right: -5rem;
+}
