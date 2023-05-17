@@ -2,3 +2,10 @@
   max-width: 60rem;
   margin: auto;
 }
+
+@media (max-width: 1000px) {
+  .wrapper {
+    max-width: 95%;
+    margin: auto;
+  }
+}

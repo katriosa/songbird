@@ -3,3 +3,9 @@
   flex-direction: row;
   gap: 1rem;
 }
+@media (max-width: 830px) {
+  .main {
+    flex-direction: column-reverse;
+    gap: 0rem;
+  }
+}

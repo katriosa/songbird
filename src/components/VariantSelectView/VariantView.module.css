@@ -1,14 +1,16 @@
 .wrapper {
-  width: 30rem;
+  /* width: 30rem; */
   background-color: #282c34;
   border-radius: 5px;
   padding: 0 2rem;
+  margin-bottom: 1rem;
 }
 .float {
   width: 150px;
   height: 110px;
   float: right;
   margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .float img {
@@ -22,4 +24,13 @@
 }
 .wrapper audio {
   margin-bottom: 1rem;
+}
+@media (max-width: 830px) {
+  .float {
+    width: 220px;
+    height: 180px;
+  }
+  .text {
+    font-size: 0.9rem;
+  }
 }

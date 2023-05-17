@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-content: space-between;
+  align-content: space-around;
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 2rem;
@@ -35,6 +35,7 @@
 .button {
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .button a {
@@ -51,4 +52,38 @@
 
 .button a:hover {
   background-color: #006f55;
+}
+
+@media (max-width: 1000px) {
+  .list {
+    width: 25rem;
+  }
+  .list li {
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 830px) {
+  .list {
+    width: 100%;
+    height: auto;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 1rem 0.5rem;
+    gap: 0.3rem;
+  }
+  .list li {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .list {
+    height: 7rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-between;
+  }
 }
