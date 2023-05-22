@@ -28,7 +28,7 @@
 .button button {
   text-align: center;
   padding: 0.7rem 2rem;
-  background-color: #009a76;
+  background-color: #026951;
   border: none;
   border: none;
   border-radius: 5px;
@@ -38,9 +38,8 @@
 }
 
 .button button:hover {
-  background-color: #006f55;
+  background-color: #009a76;
 }
-
 
 @media (max-width: 1000px) {
   .list {
