@@ -27,7 +27,7 @@ const VariantView = () => {
   );
   return (
     <section className={classes.wrapper}>
-      <div>Послушайте плеер. Выберите птицу из списка.</div>
+      <div className={classes.default}>Послушайте плеер. Выберите птицу из списка.</div>
     </section>
   );
 };

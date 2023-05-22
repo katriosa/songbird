@@ -23,3 +23,15 @@
   border: 2px solid #9a3009;
   background-color: #9a3009;
 }
+@media (min-width: 1000px) {
+  .btn-item {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 830px) {
+  .btn-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
