@@ -22,7 +22,11 @@ const VariantSelectView = ({
         correctBirdId={correctBirdId}
         incorrectBirdId={incorrectBirdId}
       />
-      <VariantView />
+      <VariantView
+        levelDataArr={levelDataArr}
+        correctBirdId={correctBirdId}
+        incorrectBirdId={incorrectBirdId}
+      />
     </main>
   );
 };

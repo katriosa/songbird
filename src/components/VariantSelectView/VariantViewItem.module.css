@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.float {
+  width: 150px;
+  height: 110px;
+  float: right;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.float img {
+  width: 100%;
+}
+.text {
+  margin-bottom: 1rem;
+}
+.species {
+  font-style: italic;
+}
+.wrapper audio {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 830px) {
+  .float {
+    width: 220px;
+    height: 180px;
+  }
+  .text {
+    font-size: 0.9rem;
+  }
+}
