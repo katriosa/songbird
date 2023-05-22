@@ -1,6 +1,6 @@
 import classes from "./SecretBlock.module.css";
 
-const SecretBlock = () => {
+const SecretBlock = ({ randomBird }) => {
   return (
     <section className={classes.wrapper}>
       <div className={classes["secret-content"]}>
@@ -17,11 +17,8 @@ const SecretBlock = () => {
               <h3>0</h3>
             </div>
           </div>
-          <h2>Певчий дрозд</h2>
-          <audio
-            src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
-            controls
-          ></audio>
+          <h2>*{randomBird.name}*</h2>
+          <audio src={randomBird.audio} controls></audio>
         </div>
       </div>
       <div className={classes.score}>

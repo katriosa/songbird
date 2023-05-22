@@ -1,0 +1,25 @@
+.btn-item {
+  margin: 0;
+  border: 2px solid #707070;
+  background-color: #4b5262;
+  border-radius: 5px;
+  padding: 0.5rem 3rem;
+  text-align: center;
+  color: beige;
+  font-size: 1.5vw;
+}
+
+.btn-item:hover {
+  background-color: #707070;
+  cursor: pointer;
+}
+
+.btn-item.correct {
+  border: 2px solid #1f782e;
+  background-color: #1f782e;
+}
+
+.btn-item.incorrect {
+  border: 2px solid #9a3009;
+  background-color: #9a3009;
+}

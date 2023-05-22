@@ -1,14 +1,24 @@
 .levels {
-  list-style: none;
   display: flex;
   padding: 1rem 2rem;
   justify-content: center;
   margin: 0;
   gap: 1rem;
 }
-
-.levels li {
+/* 
+.levels button {
   background-color: #009a76;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  white-space: nowrap; */
+/* } */
+
+.btn {
+  background-color: #026951;
+  border: none;
   border-radius: 5px;
   color: white;
   padding: 0.5rem 1rem;
@@ -16,14 +26,18 @@
   white-space: nowrap;
 }
 
+.btn.active {
+  background-color: #009a76;
+}
+
 @media (max-width: 730px) {
-  .levels li {
+  .btn {
     font-size: 0.8rem;
     padding: 0.5rem 0.5rem;
   }
 }
 @media (max-width: 580px) {
-  .levels li:not(:first-child) {
+  .btn:not(.btn.active) {
     display: none;
   }
 }

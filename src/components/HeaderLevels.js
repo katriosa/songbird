@@ -1,13 +1,21 @@
 import classes from "./HeaderLevels.module.css";
-const HeaderLevels = () => {
+import { birdsData } from "../store/data";
+import { Link } from "react-router-dom";
+
+const HeaderLevels = ({ numberOfSelectedLevel }) => {
   return (
     <ul className={classes.levels}>
-      <li>Уровень 1</li>
-      <li>Уровень 2</li>
-      <li>Уровень 3</li>
-      <li>Уровень 4</li>
-      <li>Уровень 5</li>
-      <li>Уровень 6</li>
+      {birdsData.map((level, index) => {
+        const buttonClass = `${classes.btn} ${
+          numberOfSelectedLevel === index && classes.active
+        }`;
+
+        return (
+          <button key={index} className={buttonClass}>
+            Уровень {index + 1}
+          </button>
+        );
+      })}
     </ul>
   );
 };

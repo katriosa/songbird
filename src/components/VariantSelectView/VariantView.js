@@ -1,8 +1,8 @@
 import classes from "./VariantView.module.css";
 
 const VariantView = () => {
-  return (
-    <section className={classes.wrapper}>
+  const selectedVariant = (
+    <>
       <div className={classes.text}>
         <div className={classes.float}>
           <img
@@ -23,6 +23,11 @@ const VariantView = () => {
         src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
         controls
       ></audio>
+    </>
+  );
+  return (
+    <section className={classes.wrapper}>
+      <div>Послушайте плеер. Выберите птицу из списка.</div>
     </section>
   );
 };

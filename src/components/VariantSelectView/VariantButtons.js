@@ -1,21 +1,36 @@
 import classes from "./VariantButtons.module.css";
-import { Link } from "react-router-dom";
+import VariantItem from "./VariantItem";
 
-const VariantButtons = () => {
+const VariantButtons = ({
+  numberOfSelectedLevel,
+  setNumberOfSelectedLevel,
+  levelDataArr,
+  compareBirdId,
+  correctBirdId,
+  incorrectBirdId,
+}) => {
+  const changeLevelHandler = () => {
+    setNumberOfSelectedLevel(numberOfSelectedLevel + 1);
+  };
+
   return (
     <>
       <section className={classes.wrapper}>
         <ul className={classes.list}>
-          <li>Ворон</li>
-          <li>Журавль</li>
-          <li>Ласточка</li>
-          <li>Козодой</li>
-          <li>Кукушка</li>
-          <li>Синица</li>
+          {levelDataArr.map((item) => (
+            <VariantItem
+              title={item.name}
+              key={item.id}
+              id={item.id}
+              correctBirdId={correctBirdId}
+              incorrectBirdId={incorrectBirdId}
+              compareBirdId={compareBirdId}
+            />
+          ))}
         </ul>
         <div className={classes["btn-wrapper"]}>
           <div className={classes.button}>
-            <Link to="/game">Дальше</Link>
+            <button onClick={changeLevelHandler}>Дальше</button>
           </div>
         </div>
       </section>
