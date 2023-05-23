@@ -1,6 +1,9 @@
 import classes from "./SecretBlock.module.css";
 
-const SecretBlock = ({ randomBird }) => {
+const SecretBlock = ({ randomBird, correctBirdId, score }) => {
+  const defaultImage =
+    "https://birds-quiz.netlify.app/static/media/bird.06a46938.jpg";
+  const defaultTitle = "*****";
   return (
     <section className={classes.wrapper}>
       <div className={classes["secret-content"]}>
@@ -14,7 +17,7 @@ const SecretBlock = ({ randomBird }) => {
           <div className={classes["score-wrapper"]}>
             <div className={classes["score-min"]}>
               <h3>Счёт</h3>
-              <h3>0</h3>
+              <h3>{score}</h3>
             </div>
           </div>
           <h2>*{randomBird.name}*</h2>
@@ -23,7 +26,7 @@ const SecretBlock = ({ randomBird }) => {
       </div>
       <div className={classes.score}>
         <h3>Счёт</h3>
-        <h3>0</h3>
+        <h3>{score}</h3>
       </div>
     </section>
   );

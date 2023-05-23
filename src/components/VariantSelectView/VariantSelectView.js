@@ -16,7 +16,6 @@ const VariantSelectView = ({
       <VariantButtons
         setNumberOfSelectedLevel={setNumberOfSelectedLevel}
         numberOfSelectedLevel={numberOfSelectedLevel}
-        randomBird={randomBird}
         levelDataArr={levelDataArr}
         compareBirdId={compareBirdId}
         correctBirdId={correctBirdId}
