@@ -2,7 +2,7 @@ import HeaderLevels from "../components/HeaderLevels";
 import SecretBlock from "../components/SecretBlock";
 import VariantSelectView from "../components/VariantSelectView/VariantSelectView";
 import Wrapper from "../UI/Wrapper";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { birdsData } from "../store/data";
 
 const GamePage = () => {
@@ -16,45 +16,40 @@ const GamePage = () => {
 
   const [correctBirdId, setCorrectBirdId] = useState(null);
   const [incorrectBirdId, setIncorrectBirdId] = useState(null);
-  const [clickBirdId, setСlickBirdId] = useState(null);
-  const [score, setScore] = useState(0);
-  const [countLevel, setCountLevel] = useState(5);
+  const [clickedBirdId, setСlickedBirdId] = useState(null);
+  const [levelScore, setLevelScore] = useState(0);
+  const [calculatedScore, setCalculatedScore] = useState(5);
 
   const compareBirdId = (buttonId) => {
-    setСlickBirdId(buttonId);
+    setСlickedBirdId(buttonId);
     if (buttonId === randomBird.id) {
       setCorrectBirdId(buttonId);
     } else {
       setIncorrectBirdId(buttonId);
     }
   };
-
-  const currentScoreCount = useMemo(() => {
-    if (clickBirdId) {
-      if (clickBirdId === randomBird.id) {
-        // setScore(score + countLevel);
-        setScore((prev) => {
-          return prev + countLevel;
+  useEffect(() => {
+    if (clickedBirdId) {
+      if (clickedBirdId === randomBird.id) {
+        setLevelScore((prev) => {
+          return prev + calculatedScore;
         });
-        setCountLevel(5);
+        setCalculatedScore(5);
       } else {
-        // setCountLevel(countLevel - 1);
-        setCountLevel((prev) => {
+        setCalculatedScore((prev) => {
           return prev === 0 ? 0 : prev - 1;
         });
       }
     }
-  }, [clickBirdId, randomBird.id]);
-  console.log("countLevel", countLevel);
-  console.log("score", score);
+  }, [clickedBirdId, randomBird.id]);
 
   return (
     <Wrapper>
       <HeaderLevels numberOfSelectedLevel={numberOfSelectedLevel} />
       <SecretBlock
+        isBirdGuessed={clickedBirdId === randomBird.id}
         randomBird={randomBird}
-        correctBirdId={correctBirdId}
-        score={score}
+        score={levelScore}
       />
       <VariantSelectView
         setNumberOfSelectedLevel={setNumberOfSelectedLevel}

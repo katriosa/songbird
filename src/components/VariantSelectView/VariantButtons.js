@@ -22,6 +22,7 @@ const VariantButtons = ({
               title={item.name}
               key={item.id}
               id={item.id}
+              item={item}
               correctBirdId={correctBirdId}
               incorrectBirdId={incorrectBirdId}
               compareBirdId={compareBirdId}

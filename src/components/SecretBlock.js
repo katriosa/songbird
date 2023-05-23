@@ -1,17 +1,22 @@
+import { useCallback } from "react";
 import classes from "./SecretBlock.module.css";
 
-const SecretBlock = ({ randomBird, correctBirdId, score }) => {
-  const defaultImage =
-    "https://birds-quiz.netlify.app/static/media/bird.06a46938.jpg";
-  const defaultTitle = "*****";
+const SecretBlock = ({ randomBird, isBirdGuessed, score }) => {
+  const birdData = useCallback(() => {
+    if (isBirdGuessed) {
+      return { image: randomBird.image, title: randomBird.name };
+    }
+    return {
+      image: "https://birds-quiz.netlify.app/static/media/bird.06a46938.jpg",
+      title: "*****",
+    };
+  }, [isBirdGuessed]);
+
   return (
     <section className={classes.wrapper}>
       <div className={classes["secret-content"]}>
         <div className={classes["secret-image"]}>
-          <img
-            src="https://birds-quiz.netlify.app/static/media/bird.06a46938.jpg"
-            alt="secret-bird"
-          />
+          <img src={birdData().image} />
         </div>
         <div className={classes["secret-details"]}>
           <div className={classes["score-wrapper"]}>
