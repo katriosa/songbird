@@ -26,7 +26,11 @@ const VariantView = ({ levelDataArr, correctBirdId, incorrectBirdId }) => {
   );
 
   if (clickedBird) {
-    return <VariantViewItem clickedBird={clickedBird} />;
+    return (
+      <section className={classes.wrapper}>
+        <VariantViewItem clickedBird={clickedBird} />
+      </section>
+    );
   }
   return defaultContent;
 };

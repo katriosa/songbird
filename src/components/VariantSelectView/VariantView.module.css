@@ -1,11 +1,8 @@
 .wrapper {
-  /* width: 30rem; */
   background-color: #282c34;
   border-radius: 5px;
-  padding: 0 2rem;
-  margin-bottom: 1rem;
 }
 
 .default {
-  padding: 1.5rem 0;
+  padding: 1.5rem 2rem;
 }

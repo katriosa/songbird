@@ -1,6 +1,9 @@
 .container {
   display: flex;
   flex-direction: column;
+  background-color: #282c34;
+  border-radius: 5px;
+  padding: 1rem;
 }
 
 .float {
@@ -16,6 +19,9 @@
 }
 .text {
   margin-bottom: 1rem;
+}
+.title {
+  margin-top: 0;
 }
 .species {
   font-style: italic;

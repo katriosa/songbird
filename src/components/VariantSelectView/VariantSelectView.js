@@ -10,6 +10,7 @@ const VariantSelectView = ({
   compareBirdId,
   correctBirdId,
   incorrectBirdId,
+  resetBirdIds,
 }) => {
   return (
     <main className={classes.main}>
@@ -20,6 +21,7 @@ const VariantSelectView = ({
         compareBirdId={compareBirdId}
         correctBirdId={correctBirdId}
         incorrectBirdId={incorrectBirdId}
+        resetBirdIds={resetBirdIds}
       />
       <VariantView
         levelDataArr={levelDataArr}

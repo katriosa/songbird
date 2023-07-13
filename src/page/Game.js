@@ -20,6 +20,13 @@ const GamePage = () => {
   const [levelScore, setLevelScore] = useState(0);
   const [calculatedScore, setCalculatedScore] = useState(5);
 
+  const resetBirdIds = () => {
+    setCorrectBirdId(null);
+    setIncorrectBirdId(null);
+    setСlickedBirdId(null);
+    setCalculatedScore(5);
+  };
+
   const compareBirdId = (buttonId) => {
     setСlickedBirdId(buttonId);
     if (buttonId === randomBird.id) {
@@ -28,20 +35,23 @@ const GamePage = () => {
       setIncorrectBirdId(buttonId);
     }
   };
+  // console.log("calculatedScore", calculatedScore);
+  // console.log("levelScore", levelScore);
+
   useEffect(() => {
     if (clickedBirdId) {
       if (clickedBirdId === randomBird.id) {
         setLevelScore((prev) => {
           return prev + calculatedScore;
         });
-        setCalculatedScore(5);
       } else {
         setCalculatedScore((prev) => {
           return prev === 0 ? 0 : prev - 1;
         });
+        setСlickedBirdId(null);
       }
     }
-  }, [clickedBirdId, randomBird.id]);
+  }, [clickedBirdId, randomBird.id, calculatedScore]);
 
   return (
     <Wrapper>
@@ -59,6 +69,7 @@ const GamePage = () => {
         compareBirdId={compareBirdId}
         correctBirdId={correctBirdId}
         incorrectBirdId={incorrectBirdId}
+        resetBirdIds={resetBirdIds}
       />
     </Wrapper>
   );

@@ -37,7 +37,11 @@
   font-weight: bold;
 }
 
-.button button:hover {
+.button button:disabled {
+  cursor: not-allowed;
+}
+
+.button button:hover:enabled {
   background-color: #009a76;
 }
 

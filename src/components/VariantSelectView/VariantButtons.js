@@ -8,9 +8,11 @@ const VariantButtons = ({
   compareBirdId,
   correctBirdId,
   incorrectBirdId,
+  resetBirdIds,
 }) => {
   const changeLevelHandler = () => {
     setNumberOfSelectedLevel(numberOfSelectedLevel + 1);
+    resetBirdIds();
   };
 
   return (
@@ -31,7 +33,9 @@ const VariantButtons = ({
         </ul>
         <div className={classes["btn-wrapper"]}>
           <div className={classes.button}>
-            <button onClick={changeLevelHandler}>Дальше</button>
+            <button onClick={changeLevelHandler} disabled={!correctBirdId}>
+              Дальше
+            </button>
           </div>
         </div>
       </section>
