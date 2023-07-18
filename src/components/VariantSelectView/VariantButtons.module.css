@@ -29,12 +29,11 @@
   text-align: center;
   padding: 0.7rem 2rem;
   background-color: #026951;
-  border: none;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  font-weight: bold;
 }
 
 .button button:disabled {
