@@ -6,7 +6,7 @@ const VariantSelectView = ({
   setNumberOfSelectedLevel,
   numberOfSelectedLevel,
   levelDataArr,
-  randomBird,
+  clickedBirdObj,
   compareBirdId,
   correctBirdId,
   incorrectBirdId,
@@ -27,6 +27,7 @@ const VariantSelectView = ({
         levelDataArr={levelDataArr}
         correctBirdId={correctBirdId}
         incorrectBirdId={incorrectBirdId}
+        clickedBirdObj={clickedBirdObj}
       />
     </main>
   );

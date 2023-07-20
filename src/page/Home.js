@@ -9,7 +9,7 @@ const Homepage = () => {
         <div className={classes["bg-image"]}></div>
         <div className={classes.content}>
           <h1>
-            Угадай <span>птичку</span> по голосу
+            Угадай <span>птицу</span> по голосу
           </h1>
           <Link to="/game">Начать</Link>
         </div>

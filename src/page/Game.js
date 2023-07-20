@@ -15,6 +15,7 @@ const GamePage = () => {
   }, [levelDataArr]);
 
   const [correctBirdId, setCorrectBirdId] = useState(null);
+  const [isBirdClicked, setIsBirdClicked] = useState(false);
   const [incorrectBirdId, setIncorrectBirdId] = useState(null);
   const [clickedBirdId, setСlickedBirdId] = useState(null);
   const [levelScore, setLevelScore] = useState(0);
@@ -28,6 +29,7 @@ const GamePage = () => {
   };
 
   const compareBirdId = (buttonId) => {
+    setIsBirdClicked(true);
     setСlickedBirdId(buttonId);
     if (buttonId === randomBird.id) {
       setCorrectBirdId(buttonId);
@@ -39,7 +41,7 @@ const GamePage = () => {
   // console.log("levelScore", levelScore);
 
   useEffect(() => {
-    if (clickedBirdId) {
+    if (isBirdClicked) {
       if (clickedBirdId === randomBird.id) {
         setLevelScore((prev) => {
           return prev + calculatedScore;
@@ -48,10 +50,14 @@ const GamePage = () => {
         setCalculatedScore((prev) => {
           return prev === 0 ? 0 : prev - 1;
         });
-        setСlickedBirdId(null);
+        setIsBirdClicked(false);
       }
     }
-  }, [clickedBirdId, randomBird.id, calculatedScore]);
+  }, [clickedBirdId, isBirdClicked, randomBird.id, calculatedScore]);
+
+  const clickedBirdObj = useMemo(() => {
+    return levelDataArr.filter((item) => item.id === clickedBirdId)[0];
+  }, [clickedBirdId, levelDataArr]);
 
   return (
     <Wrapper>
@@ -70,6 +76,7 @@ const GamePage = () => {
         correctBirdId={correctBirdId}
         incorrectBirdId={incorrectBirdId}
         resetBirdIds={resetBirdIds}
+        clickedBirdObj={clickedBirdObj}
       />
     </Wrapper>
   );

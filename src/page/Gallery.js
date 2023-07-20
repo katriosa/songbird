@@ -1,35 +1,29 @@
 import Wrapper from "../UI/Wrapper";
 import classes from "./Gallery.module.css";
+import { birdsData } from "../store/data";
 
 const GalleryPage = () => {
+  const currentLevel = birdsData[0];
+  const displayCard = currentLevel.map((objBird) => {
+    return (
+      <div className={classes.img}>
+        <img src={objBird.image} alt={objBird.name} />
+        <div className={classes.title}>{objBird.name}</div>
+      </div>
+    );
+  });
   return (
-    <Wrapper>
-      <section className={classes.wrapper}>
-        <div className={`${classes.arrow} ${classes["arrow-left"]}`} />
-        <div className={`${classes.arrow} ${classes["arrow-right"]}`} />
-
-        <div className={classes.text}>
-          <div className={classes.float}>
-            <img
-              src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
-              alt="bird"
-            />
-          </div>
-          <h3 className={classes.title}>Ворон</h3>
-          <p className={classes.species}>Corvus corax</p>
-          <p className={classes.description}>
-            Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах
-            крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В
-            Англии бытует поверье, что в день, когда черные вороны улетят от
-            Тауэра, монархия рухнет.
-          </p>
-        </div>
-        <audio
-          src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"
-          controls
-        ></audio>
-      </section>
-    </Wrapper>
+    <div className={classes.gallery}>
+      <h3>Уровень 1</h3>
+      <div className={classes.container}>{displayCard}</div>
+      <div className={classes.popup}>
+        <span>&times;</span>
+        <img
+          src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
+          alt="bird"
+        />
+      </div>
+    </div>
   );
 };
 export default GalleryPage;
