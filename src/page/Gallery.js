@@ -1,27 +1,56 @@
-import Wrapper from "../UI/Wrapper";
 import classes from "./Gallery.module.css";
 import { birdsData } from "../store/data";
+import { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const GalleryPage = () => {
-  const currentLevel = birdsData[0];
-  const displayCard = currentLevel.map((objBird) => {
+  const allBirds = birdsData.flat();
+  const [clickedTileID, setClickedTileID] = useState(null);
+
+  const renderLargeTile = () => {
+    const clickedTileObj = allBirds.filter(
+      (tile) => tile.id === clickedTileID
+    )[0];
+
+    const closeTileHandler = () => setClickedTileID(null);
+
     return (
-      <div className={classes.img}>
-        <img src={objBird.image} alt={objBird.name} />
-        <div className={classes.title}>{objBird.name}</div>
+      <div className={classes.popup}>
+        <span onClick={closeTileHandler}>&times;</span>
+        <img src={clickedTileObj.image} alt={clickedTileObj.name} />
       </div>
     );
-  });
+  };
+
+  const renderTiles = () => {
+    return (
+      <div className={classes.container}>
+        {allBirds.map((tile) => {
+          return (
+            <div
+              className={classes.img}
+              onClick={() => setClickedTileID(tile.id)}
+            >
+              <img src={tile.image} alt={tile.name} />
+              <div className={classes.title}>{tile.name}</div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <div className={classes.gallery}>
-      <h3>Уровень 1</h3>
-      <div className={classes.container}>{displayCard}</div>
-      <div className={classes.popup}>
-        <span>&times;</span>
-        <img
-          src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
-          alt="bird"
-        />
+      <div className={classes["main-container"]}>
+        {/* <div className={classes["arrow-container"]}>
+          <FaChevronLeft className={classes.arrow} />
+        </div> */}
+        {renderTiles()}
+        {clickedTileID && renderLargeTile()}
+        {/* <div className={classes["arrow-container"]}>
+          <FaChevronRight className={classes.arrow} />
+        </div> */}
       </div>
     </div>
   );

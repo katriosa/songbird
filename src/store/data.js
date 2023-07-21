@@ -2,7 +2,6 @@ export const birdsData = [
   [
     {
       id: 1,
-      level: "Уровень 1",
       name: "Ворон",
       species: "Corvus corax",
       description:
@@ -13,7 +12,6 @@ export const birdsData = [
     },
     {
       id: 2,
-      level: "Уровень 1",
       name: "Журавль",
       species: "Grus grus",
       description:
@@ -24,7 +22,6 @@ export const birdsData = [
     },
     {
       id: 3,
-      level: "Уровень 1",
       name: "Ласточка",
       species: "Delichon urbicum",
       description:
@@ -35,7 +32,6 @@ export const birdsData = [
     },
     {
       id: 4,
-      level: "Уровень 1",
       name: "Козодой",
       species: "Caprimulgus europaeus",
       description:
@@ -46,7 +42,6 @@ export const birdsData = [
     },
     {
       id: 5,
-      level: "Уровень 1",
       name: "Кукушка",
       species: "Cuculus canorus",
       description:
@@ -57,7 +52,6 @@ export const birdsData = [
     },
     {
       id: 6,
-      level: "Уровень 1",
       name: "Синица",
       species: "Parus major",
       description:
@@ -69,8 +63,7 @@ export const birdsData = [
   ],
   [
     {
-      id: 1,
-      level: "Уровень 2",
+      id: 7,
       name: "Воробей",
       species: "Passer domesticus",
       description:
@@ -80,8 +73,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/CXFHOPIVAS/XC503224-191020_0134.mp3",
     },
     {
-      id: 2,
-      level: "Уровень 2",
+      id: 8,
       name: "Грач",
       species: "Corvus frugilegus",
       description:
@@ -91,8 +83,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/RLRHCUIPIY/XC512540-gawron%20Suble%2019.12.19%20%2012.35.mp3",
     },
     {
-      id: 3,
-      level: "Уровень 2",
+      id: 9,
       name: "Галка",
       species: "Coloeus monedula",
       description:
@@ -102,8 +93,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC510498-Coloeus%20monedula_2019.11.13_11.55_01.mp3",
     },
     {
-      id: 4,
-      level: "Уровень 2",
+      id: 10,
       name: "Певчий дрозд",
       species: "Turdus philomelos",
       description:
@@ -113,8 +103,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513326-190704_1146_TF-Glogow.mp3",
     },
     {
-      id: 5,
-      level: "Уровень 2",
+      id: 11,
       name: "Сорока",
       species: "Pica pica",
       description:
@@ -124,8 +113,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC500868-Pica%20pica2019.08.23_09.18_02.mp3",
     },
     {
-      id: 6,
-      level: "Уровень 2",
+      id: 12,
       name: "Сойка",
       species: "Garrulus glandarius",
       description:
@@ -137,8 +125,7 @@ export const birdsData = [
   ],
   [
     {
-      id: 1,
-      level: "Уровень 3",
+      id: 13,
       name: "Зяблик",
       species: "Fringilla coelebs",
       description:
@@ -148,8 +135,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC512407-150622_03%20zi%C4%99ba%20%282%29.mp3",
     },
     {
-      id: 2,
-      level: "Уровень 3",
+      id: 14,
       name: "Клёст",
       species: "Loxia curvirostra",
       description:
@@ -159,8 +145,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/OTVUCEGYZN/XC495381-Kruisbek%20roep%20NHD%20290619.mp3",
     },
     {
-      id: 3,
-      level: "Уровень 3",
+      id: 15,
       name: "Горлица",
       species: "Streptopelia turtur",
       description:
@@ -170,8 +155,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC324106-Turkawka_Streptopelia_turtur_Poland_Jarek_Matusiak_2011625_07.mp3",
     },
     {
-      id: 4,
-      level: "Уровень 3",
+      id: 16,
       name: "Дятел",
       species: "Dendrocopos major",
       description:
@@ -181,8 +165,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC518928-AB-017%20dzi%C4%99cio%C5%82%20du%C5%BCy%20agresja%20%282%29.mp3",
     },
     {
-      id: 5,
-      level: "Уровень 3",
+      id: 17,
       name: "Удод",
       species: "Upupa epops",
       description:
@@ -192,8 +175,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC477326-dudek%20%282%29.mp3",
     },
     {
-      id: 6,
-      level: "Уровень 3",
+      id: 18,
       name: "Стриж",
       species: "Apus apus",
       description:
@@ -205,8 +187,7 @@ export const birdsData = [
   ],
   [
     {
-      id: 1,
-      level: "Уровень 4",
+      id: 19,
       name: "Жаворонок",
       species: "Alauda arvensis",
       description:
@@ -216,8 +197,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC462158-Skowronek_Alauda_arvensis_Poland_Jarek_Matusiak_%20-006%20skowronek%20%282%29.mp3",
     },
     {
-      id: 2,
-      level: "Уровень 4",
+      id: 20,
       name: "Соловей",
       species: "Luscinia luscinia",
       description:
@@ -227,8 +207,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/HILVWSADVL/XC513809-R07_0052%20Thrush%20Nightingale%20Snipe.mp3",
     },
     {
-      id: 3,
-      level: "Уровень 4",
+      id: 21,
       name: "Скворец",
       species: "Sturnus vulgaris",
       description:
@@ -238,8 +217,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC515519-2020.01.01_17.24_01.MP3",
     },
     {
-      id: 4,
-      level: "Уровень 4",
+      id: 22,
       name: "Иволга",
       species: "Oriolus oriolus",
       description:
@@ -249,8 +227,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/GYAUIPUVNM/XC491801-2019.07.07_06.28_01.mp3",
     },
     {
-      id: 5,
-      level: "Уровень 4",
+      id: 23,
       name: "Свиристель",
       species: "Bombycilla garrulus",
       description:
@@ -260,8 +237,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC517421-AB-004%20%282%29%20jemio%C5%82uszka.mp3",
     },
     {
-      id: 6,
-      level: "Уровень 4",
+      id: 24,
       name: "Щегол",
       species: "Carduelis carduelis",
       description:
@@ -273,8 +249,7 @@ export const birdsData = [
   ],
   [
     {
-      id: 1,
-      level: "Уровень 5",
+      id: 25,
       name: "Орёл",
       species: "Aquila nipalensis",
       description:
@@ -284,8 +259,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/KTBTZAHSXF/10_Aquila_nipalensis_al02D85.mp3",
     },
     {
-      id: 2,
-      level: "Уровень 5",
+      id: 26,
       name: "Коршун",
       species: "Milvus migrans",
       description:
@@ -295,8 +269,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/SDPCHKOHRH/XC485740-2019-06-22%20Selenga%20Milan%20brun%20cris%20de%20quemandage%203.mp3",
     },
     {
-      id: 3,
-      level: "Уровень 5",
+      id: 27,
       name: "Лунь",
       species: "Circus cyaneus",
       description:
@@ -306,8 +279,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC513498-190709_1175_Cir.cyan-f.mp3",
     },
     {
-      id: 4,
-      level: "Уровень 5",
+      id: 28,
       name: "Сокол",
       species: "Falco peregrinus",
       description:
@@ -317,8 +289,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC496049-Pilgrimsfalk_06.mp3",
     },
     {
-      id: 5,
-      level: "Уровень 5",
+      id: 29,
       name: "Ястреб",
       species: "Accipiter gentilis",
       description:
@@ -328,8 +299,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/MMEJYLOPDO/XC512740-Duvh%C3%B6k_09.mp3",
     },
     {
-      id: 6,
-      level: "Уровень 5",
+      id: 30,
       name: "Филин",
       species: "Bubo bubo",
       description:
@@ -341,8 +311,7 @@ export const birdsData = [
   ],
   [
     {
-      id: 1,
-      level: "Уровень 6",
+      id: 31,
       name: "Альбатрос",
       species: "Diomedea exulans",
       description:
@@ -352,8 +321,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/WOEAFQRMUD/XC293087-Diomedea%20exulans151120_T254.mp3",
     },
     {
-      id: 2,
-      level: "Уровень 6",
+      id: 32,
       name: "Олуша",
       species: "Sula nebouxii",
       description:
@@ -363,8 +331,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/YHKQPPJDVP/XC411507-171217_1491%20BF%20Booby%205ft%20IDLP%201230%20mp3%20amp.mp3",
     },
     {
-      id: 3,
-      level: "Уровень 6",
+      id: 33,
       name: "Буревестник",
       species: "Puffinus griseus",
       description:
@@ -374,19 +341,17 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/XQEVNREHJY/SHEARWATER%20Christmas%20Island_04_Motu_Isla%20de%20Pascua-Easter%20Island_CH_4MAR03_Alvaro%20Jaramillo.mp3",
     },
     {
-      id: 4,
-      level: "Уровень 6",
+      id: 34,
       name: "Пеликан",
       species: "Pelecanus",
       description:
         "Пеликаны — обитатели морей и рек. Ходят они неуклюже, но хорошо летают и плавают. Питаются в основном рыбой, устраивают коллективные охоты — выстроившись полукругом хлопают по воде крыльями и клювами и вытесняют напуганную рыбу на мелководье.",
-      image: "https://live.staticflickr.com/65535/49159147156_dcbbb5c12a.jpg",
+      image: "https://live.staticflickr.com/5683/23557106552_5fb77f97a6_z.jpg",
       audio:
         "https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3",
     },
     {
-      id: 5,
-      level: "Уровень 6",
+      id: 35,
       name: "Пингвин",
       species: "Aptenodytes forsteri",
       description:
@@ -396,8 +361,7 @@ export const birdsData = [
         "https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC449827-LS100829%20King%20Penguin%20call%20A.mp3",
     },
     {
-      id: 6,
-      level: "Уровень 6",
+      id: 36,
       name: "Чайка",
       species: "Larus argentatus",
       description:
