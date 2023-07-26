@@ -25,6 +25,7 @@ const GamePage = () => {
   const [showResult, setShowResult] = useState(false);
 
   const resetBirdIds = () => {
+    setIsBirdClicked(false);
     setCorrectBirdId(null);
     setIncorrectBirdId(null);
     setСlickedBirdId(null);
@@ -64,8 +65,8 @@ const GamePage = () => {
 
   const changeLevelHandler = () => {
     if (numberOfSelectedLevel < 5) {
-      setNumberOfSelectedLevel(numberOfSelectedLevel + 1);
       resetBirdIds();
+      setNumberOfSelectedLevel(numberOfSelectedLevel + 1);
     } else {
       setShowResult(true);
     }
