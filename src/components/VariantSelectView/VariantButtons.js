@@ -9,12 +9,8 @@ const VariantButtons = ({
   correctBirdId,
   incorrectBirdId,
   resetBirdIds,
+  changeLevelHandler,
 }) => {
-  const changeLevelHandler = () => {
-    setNumberOfSelectedLevel(numberOfSelectedLevel + 1);
-    resetBirdIds();
-  };
-
   return (
     <>
       <section className={classes.wrapper}>

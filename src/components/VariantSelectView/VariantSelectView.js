@@ -11,6 +11,7 @@ const VariantSelectView = ({
   correctBirdId,
   incorrectBirdId,
   resetBirdIds,
+  changeLevelHandler,
 }) => {
   return (
     <main className={classes.main}>
@@ -22,6 +23,7 @@ const VariantSelectView = ({
         correctBirdId={correctBirdId}
         incorrectBirdId={incorrectBirdId}
         resetBirdIds={resetBirdIds}
+        changeLevelHandler={changeLevelHandler}
       />
       <VariantView
         levelDataArr={levelDataArr}
