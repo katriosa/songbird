@@ -18,28 +18,29 @@
 }
 
 .content h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 3rem;
-  color: #282c34;
+  color: #493732;
+  /* background-color: brown; */
 }
 
-.content span {
+/* .content span {
   color: #01674d;
-}
+} */
 
 .content a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 1rem 2rem;
-  background-color: #fb8d61;
+  background-color: #ff6f61;
   border: none;
   border-radius: 5px;
-  color: white;
+  color: #f5f3ea;
   cursor: pointer;
 }
 
 .content a:hover {
-  background-color: #db6a39;
+  background-color: #c7574c;
 }
 .footer {
   position: absolute;
@@ -47,12 +48,11 @@
   left: 0;
   width: 100%;
   text-align: center;
-  color: white;
 }
 
 .footer a {
   text-decoration: none;
-  color: white;
+  color: #f5f3ea;
 }
 
 @media only screen and (max-width: 768px) {
@@ -62,5 +62,11 @@
 
   button {
     font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .content h1 {
+    margin-bottom: 5rem;
+    min-width: 400px;
   }
 }
