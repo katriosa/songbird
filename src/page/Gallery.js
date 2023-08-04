@@ -1,10 +1,19 @@
 import classes from "./Gallery.module.css";
-import { birdsData } from "../store/data";
 import { useState } from "react";
 import ImageSlider from "../components/ImageSlider";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const GalleryPage = () => {
-  const allBirds = birdsData.flat();
+  const { loading, birdsData } = useSelector((state) => state.birds);
+  const [allBirds, setAllbirds] = useState(null);
+
+  useEffect(() => {
+    if (birdsData) {
+      setAllbirds(birdsData.flat());
+    }
+  }, [birdsData]);
+
   const [clickedTileID, setClickedTileID] = useState(null);
 
   const renderTiles = () => {
@@ -29,14 +38,15 @@ const GalleryPage = () => {
   return (
     <div className={classes.gallery}>
       <div className={classes["main-container"]}>
-        {renderTiles()}
-        {clickedTileID && (
-          <ImageSlider
-            allBirds={allBirds}
-            clickedTileID={clickedTileID}
-            setClickedTileID={setClickedTileID}
-          />
-        )}
+        {allBirds && renderTiles()}
+        {clickedTileID &&
+          allBirds && (
+            <ImageSlider
+              allBirds={allBirds}
+              clickedTileID={clickedTileID}
+              setClickedTileID={setClickedTileID}
+            />
+          )}
       </div>
     </div>
   );

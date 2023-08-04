@@ -10,13 +10,13 @@ const SecretBlock = ({ randomBird, isBirdGuessed, score }) => {
       image: "https://birds-quiz.netlify.app/static/media/bird.06a46938.jpg",
       title: "*****",
     };
-  }, [isBirdGuessed]);
+  }, [isBirdGuessed, randomBird.image, randomBird.name]);
 
   return (
     <section className={classes.wrapper}>
       <div className={classes["secret-content"]}>
         <div className={classes["secret-image"]}>
-          <img src={birdData().image} />
+          <img src={birdData().image} alt="bird" />
         </div>
         <div className={classes["secret-details"]}>
           <div className={classes["score-wrapper"]}>

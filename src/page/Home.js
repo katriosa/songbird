@@ -1,9 +1,9 @@
 import classes from "./Home.module.css";
 import { Link } from "react-router-dom";
+import React from "react";
 
-const Homepage = () => {
+const HomePage = () => {
   return (
-    // <div className="App">
     <>
       <main>
         <div className={classes["bg-image"]}></div>
@@ -20,7 +20,6 @@ const Homepage = () => {
         </p>
       </footer>
     </>
-    // </div>
   );
 };
-export default Homepage;
+export default HomePage;
