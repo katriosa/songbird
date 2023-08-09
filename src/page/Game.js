@@ -1,42 +1,43 @@
+import React, { useState, useMemo, useEffect } from "react";
+import { useSelector } from "react-redux";
 import HeaderLevels from "../components/HeaderLevels";
 import SecretBlock from "../components/SecretBlock";
 import VariantSelectView from "../components/VariantSelectView/VariantSelectView";
 import Wrapper from "../UI/Wrapper";
-import { useState, useMemo, useEffect } from "react";
 import ResultWindow from "../components/ResultWindow";
-import { useSelector } from "react-redux";
 
 const GamePage = () => {
   const loadedBirdsData = useSelector((state) => state.birds.birdsData);
 
   const [numberOfSelectedLevel, setNumberOfSelectedLevel] = useState(0);
-  const levelDataArr = loadedBirdsData[numberOfSelectedLevel];
-  const maxScore = loadedBirdsData.length * 5;
-
-  const randomBird = useMemo(() => {
-    const randomBirdIndex = Math.floor(Math.random() * levelDataArr.length);
-    return levelDataArr[randomBirdIndex];
-  }, [levelDataArr]);
-
   const [correctBirdId, setCorrectBirdId] = useState(null);
   const [isBirdClicked, setIsBirdClicked] = useState(false);
   const [incorrectBirdId, setIncorrectBirdId] = useState(null);
-  const [clickedBirdId, setСlickedBirdId] = useState(null);
+  const [clickedBirdId, setClickedBirdId] = useState(null);
   const [levelScore, setLevelScore] = useState(0);
   const [calculatedScore, setCalculatedScore] = useState(5);
   const [showResult, setShowResult] = useState(false);
+
+  let levelDataArr = useMemo(() => {
+    return loadedBirdsData ? loadedBirdsData[numberOfSelectedLevel] : null;
+  }, [loadedBirdsData, numberOfSelectedLevel]);
+
+  let maxScore = loadedBirdsData ? loadedBirdsData.length * 5 : null;
+  let randomBird = levelDataArr
+    ? levelDataArr[Math.floor(Math.random() * levelDataArr.length)]
+    : null;
 
   const resetBirdIds = () => {
     setIsBirdClicked(false);
     setCorrectBirdId(null);
     setIncorrectBirdId(null);
-    setСlickedBirdId(null);
+    setClickedBirdId(null);
     setCalculatedScore(5);
   };
 
   const compareBirdId = (buttonId) => {
     setIsBirdClicked(true);
-    setСlickedBirdId(buttonId);
+    setClickedBirdId(buttonId);
     if (buttonId === randomBird.id) {
       setCorrectBirdId(buttonId);
     } else {
@@ -45,22 +46,21 @@ const GamePage = () => {
   };
 
   useEffect(() => {
-    if (isBirdClicked) {
+    if (isBirdClicked && randomBird) {
       if (clickedBirdId === randomBird.id) {
-        setLevelScore((prev) => {
-          return prev + calculatedScore;
-        });
+        setLevelScore((prev) => prev + calculatedScore);
       } else {
-        setCalculatedScore((prev) => {
-          return prev === 0 ? 0 : prev - 1;
-        });
+        setCalculatedScore((prev) => (prev === 0 ? 0 : prev - 1));
         setIsBirdClicked(false);
       }
     }
-  }, [clickedBirdId, isBirdClicked, randomBird.id, calculatedScore]);
+  }, [clickedBirdId, isBirdClicked, randomBird, calculatedScore]);
 
   const clickedBirdObj = useMemo(() => {
-    return levelDataArr.filter((item) => item.id === clickedBirdId)[0];
+    return (
+      levelDataArr &&
+      levelDataArr.filter((item) => item.id === clickedBirdId)[0]
+    );
   }, [clickedBirdId, levelDataArr]);
 
   const changeLevelHandler = () => {
@@ -77,30 +77,35 @@ const GamePage = () => {
       {showResult && (
         <ResultWindow totalScore={levelScore} maxScore={maxScore} />
       )}
-      <HeaderLevels
-        numberOfSelectedLevel={numberOfSelectedLevel}
-        loadedBirdsData={loadedBirdsData}
-      />
-      <SecretBlock
-        isBirdGuessed={clickedBirdId === randomBird.id}
-        randomBird={randomBird}
-        score={levelScore}
-      />
-      <VariantSelectView
-        setNumberOfSelectedLevel={setNumberOfSelectedLevel}
-        numberOfSelectedLevel={numberOfSelectedLevel}
-        randomBird={randomBird}
-        levelDataArr={levelDataArr}
-        compareBirdId={compareBirdId}
-        correctBirdId={correctBirdId}
-        incorrectBirdId={incorrectBirdId}
-        resetBirdIds={resetBirdIds}
-        clickedBirdObj={clickedBirdObj}
-        changeLevelHandler={changeLevelHandler}
-      />
+      {loadedBirdsData && (
+        <>
+          <HeaderLevels
+            numberOfSelectedLevel={numberOfSelectedLevel}
+            loadedBirdsData={loadedBirdsData}
+          />
+          <SecretBlock
+            isBirdGuessed={clickedBirdId === randomBird?.id}
+            randomBird={randomBird}
+            score={levelScore}
+          />
+          <VariantSelectView
+            setNumberOfSelectedLevel={setNumberOfSelectedLevel}
+            numberOfSelectedLevel={numberOfSelectedLevel}
+            randomBird={randomBird}
+            levelDataArr={levelDataArr}
+            compareBirdId={compareBirdId}
+            correctBirdId={correctBirdId}
+            incorrectBirdId={incorrectBirdId}
+            resetBirdIds={resetBirdIds}
+            clickedBirdObj={clickedBirdObj}
+            changeLevelHandler={changeLevelHandler}
+          />
+        </>
+      )}
     </Wrapper>
   );
 };
+
 export default GamePage;
 
 // export async function loader() {

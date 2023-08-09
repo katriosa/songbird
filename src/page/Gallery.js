@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 const GalleryPage = () => {
-  const { loading, birdsData } = useSelector((state) => state.birds);
+  const { birdsData } = useSelector((state) => state.birds);
   const [allBirds, setAllbirds] = useState(null);
 
   useEffect(() => {
@@ -39,14 +39,13 @@ const GalleryPage = () => {
     <div className={classes.gallery}>
       <div className={classes["main-container"]}>
         {allBirds && renderTiles()}
-        {clickedTileID &&
-          allBirds && (
-            <ImageSlider
-              allBirds={allBirds}
-              clickedTileID={clickedTileID}
-              setClickedTileID={setClickedTileID}
-            />
-          )}
+        {clickedTileID && allBirds && (
+          <ImageSlider
+            allBirds={allBirds}
+            clickedTileID={clickedTileID}
+            setClickedTileID={setClickedTileID}
+          />
+        )}
       </div>
     </div>
   );
