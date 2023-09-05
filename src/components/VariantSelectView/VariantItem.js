@@ -4,7 +4,6 @@ import { useMemo } from "react";
 const VariantItem = ({
   id,
   title,
-  // item,
   correctBirdId,
   incorrectBirdId,
   compareBirdId,

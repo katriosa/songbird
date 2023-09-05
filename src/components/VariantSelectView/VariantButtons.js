@@ -2,13 +2,10 @@ import classes from "./VariantButtons.module.css";
 import VariantItem from "./VariantItem";
 
 const VariantButtons = ({
-  numberOfSelectedLevel,
-  setNumberOfSelectedLevel,
   levelDataArr,
   compareBirdId,
   correctBirdId,
   incorrectBirdId,
-  resetBirdIds,
   changeLevelHandler,
 }) => {
   return (

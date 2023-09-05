@@ -14,7 +14,7 @@ const ResultWindow = ({ totalScore, maxScore }) => {
           <Link to="/">Начать сначала</Link>
         </li>
         <li>
-          <Link to="/gallery">Посмотреть галлерею</Link>
+          <Link to="/gallery">Посмотреть галерею</Link>
         </li>
       </ul>
     </Modal>
