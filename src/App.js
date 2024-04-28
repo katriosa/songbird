@@ -5,9 +5,10 @@ import GamePage from "./page/Game";
 import GalleryPage from "./page/Gallery";
 import ErrorPage from "./page/Error";
 import { useDispatch } from "react-redux";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchBirdsRequest } from "./redux/birdsActions";
 import { useSelector } from "react-redux";
+import { ReactComponent as Spinner } from "./assets/spinner.svg";
 
 const router = createBrowserRouter([
   {
@@ -27,14 +28,27 @@ const router = createBrowserRouter([
 
 function App() {
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
   const loadedBirdsData = useSelector((state) => state.birds.birdsData);
 
   useEffect(() => {
     if (!loadedBirdsData) {
       dispatch(fetchBirdsRequest());
+    } else {
+      setLoading(false);
     }
   }, [dispatch, loadedBirdsData]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      {loading ? (
+        <div className="centred">
+          <Spinner />
+        </div>
+      ) : (
+        <RouterProvider router={router} />
+      )}
+    </div>
+  );
 }
 export default App;

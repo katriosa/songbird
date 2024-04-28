@@ -1,3 +1,4 @@
+import LazyImage from "../Lazyimage/LazyImage";
 import classes from "./VariantViewItem.module.css";
 
 const VariantViewItem = ({ clickedBird }) => {
@@ -5,7 +6,8 @@ const VariantViewItem = ({ clickedBird }) => {
     <div className={classes.container}>
       <div className={classes.text}>
         <div className={classes.float}>
-          <img src={clickedBird.image} alt="selected-bird" />
+          {/* <img src={clickedBird.image} alt="selected-bird" /> */}
+          <LazyImage src={clickedBird.image} alt="selected-bird" />
         </div>
         <h3 className={classes.title}>{clickedBird.name}</h3>
         <p className={classes.species}>{clickedBird.species}</p>
