@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { ReactComponent as Spinner } from "../../assets/spinner.svg";
 
 const LazyImage = ({ src, alt }) => {
@@ -29,17 +29,23 @@ const LazyImage = ({ src, alt }) => {
     };
   }, [src]);
 
-  return (
-    <div>
-      {loading && (
+  const content = useMemo(() => {
+    if (loading) {
+      return (
         <div className="spinner">
           <Spinner />
         </div>
-      )}
-      {error && <div>Error loading image</div>}
-      {imageSrc && <img src={imageSrc} alt={alt} />}
-    </div>
-  );
+      );
+    }
+    if (error) {
+      return <div>Error loading image</div>;
+    }
+    if (imageSrc) {
+      return <img src={imageSrc} alt={alt} />;
+    }
+  }, [alt, error, imageSrc, loading]);
+
+  return <>{content}</>;
 };
 
 export default LazyImage;

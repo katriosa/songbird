@@ -6,7 +6,6 @@ const VariantViewItem = ({ clickedBird }) => {
     <div className={classes.container}>
       <div className={classes.text}>
         <div className={classes.float}>
-          {/* <img src={clickedBird.image} alt="selected-bird" /> */}
           <LazyImage src={clickedBird.image} alt="selected-bird" />
         </div>
         <h3 className={classes.title}>{clickedBird.name}</h3>

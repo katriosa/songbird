@@ -5,19 +5,9 @@
   margin: 0;
   gap: 1rem;
 }
-/* 
-.levels button {
-  background-color: #009a76;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  white-space: nowrap; */
-/* } */
 
 .btn {
-  background-color: #026951;
+  background-color: #282c34;
   border: none;
   border-radius: 5px;
   color: white;
@@ -27,7 +17,7 @@
 }
 
 .btn.active {
-  background-color: #009a76;
+  background-color: #026951;
 }
 
 @media (max-width: 730px) {

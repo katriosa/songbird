@@ -1,5 +1,5 @@
 import classes from "./Gallery.module.css";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import ImageSlider from "../components/ImageSlider";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -16,6 +16,10 @@ const GalleryPage = () => {
 
   const [clickedTileID, setClickedTileID] = useState(null);
 
+  const onTileIDClick = useCallback((tileId) => {
+    setClickedTileID(tileId);
+  }, []);
+
   const renderTiles = () => {
     return (
       <ul className={classes.container}>
@@ -23,7 +27,7 @@ const GalleryPage = () => {
           return (
             <li
               className={classes.img}
-              onClick={() => setClickedTileID(tile.id)}
+              onClick={onTileIDClick(tile.id)}
               key={tile.id}
             >
               <img src={tile.image} alt={tile.name} />

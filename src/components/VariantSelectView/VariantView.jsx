@@ -1,7 +1,7 @@
 import classes from "./VariantView.module.css";
 import VariantViewItem from "./VariantViewItem";
 
-const VariantView = ({ clickedBirdObj }) => {
+const VariantView = ({ clickedBirdData }) => {
   const defaultContent = (
     <section className={classes.wrapper}>
       <div className={classes.default}>
@@ -10,10 +10,10 @@ const VariantView = ({ clickedBirdObj }) => {
     </section>
   );
 
-  if (clickedBirdObj) {
+  if (clickedBirdData) {
     return (
       <section className={classes.wrapper}>
-        <VariantViewItem clickedBird={clickedBirdObj} />
+        <VariantViewItem clickedBird={clickedBirdData} />
       </section>
     );
   }

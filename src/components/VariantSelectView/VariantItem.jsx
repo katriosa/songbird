@@ -1,5 +1,5 @@
 import classes from "./VariantItem.module.css";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 const VariantItem = ({
   id,
@@ -8,9 +8,9 @@ const VariantItem = ({
   incorrectBirdId,
   compareBirdId,
 }) => {
-  const clickButtonHandler = () => {
+  const clickButtonHandler = useCallback(() => {
     compareBirdId(id);
-  };
+  }, [compareBirdId, id]);
 
   const buttonClass = useMemo(() => {
     const defaultClass = classes["btn-item"];

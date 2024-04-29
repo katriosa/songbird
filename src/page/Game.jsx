@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
 import HeaderLevels from "../components/HeaderLevels";
 import SecretBlock from "../components/SecretBlock";
@@ -63,21 +63,21 @@ const GamePage = () => {
     }
   }, [clickedBirdId, isBirdClicked, randomBird, calculatedScore]);
 
-  const clickedBirdObj = useMemo(() => {
+  const clickedBirdData = useMemo(() => {
     return (
       levelDataArr &&
       levelDataArr.filter((item) => item.id === clickedBirdId)[0]
     );
   }, [clickedBirdId, levelDataArr]);
 
-  const changeLevelHandler = () => {
+  const changeLevelHandler = useCallback(() => {
     if (numberOfSelectedLevel < 5) {
       resetBirdIds();
       setNumberOfSelectedLevel(numberOfSelectedLevel + 1);
     } else {
       setShowResult(true);
     }
-  };
+  }, [numberOfSelectedLevel]);
 
   return (
     <Wrapper>
@@ -104,7 +104,7 @@ const GamePage = () => {
             correctBirdId={correctBirdId}
             incorrectBirdId={incorrectBirdId}
             resetBirdIds={resetBirdIds}
-            clickedBirdObj={clickedBirdObj}
+            clickedBirdData={clickedBirdData}
             changeLevelHandler={changeLevelHandler}
           />
         </>

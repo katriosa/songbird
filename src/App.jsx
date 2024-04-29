@@ -5,7 +5,7 @@ import GamePage from "./page/Game";
 import GalleryPage from "./page/Gallery";
 import ErrorPage from "./page/Error";
 import { useDispatch } from "react-redux";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { fetchBirdsRequest } from "./redux/birdsActions";
 import { useSelector } from "react-redux";
 import { ReactComponent as Spinner } from "./assets/spinner.svg";
@@ -39,16 +39,17 @@ function App() {
     }
   }, [dispatch, loadedBirdsData]);
 
-  return (
-    <div>
-      {loading ? (
+  const content = useMemo(() => {
+    if (loading) {
+      return (
         <div className="centred">
           <Spinner />
         </div>
-      ) : (
-        <RouterProvider router={router} />
-      )}
-    </div>
-  );
+      );
+    }
+    return <RouterProvider router={router} />;
+  }, [loading]);
+
+  return <>{content}</>;
 }
 export default App;
