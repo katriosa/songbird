@@ -12,9 +12,9 @@ const MainNavigationBar = () => {
       </div>
       <nav>
         <ul>
-          <NavigationLink path="/" textContent="Home" />
-          <NavigationLink path="/game" textContent="Game" />
-          <NavigationLink path="/gallery" textContent="Gallery" />
+          <NavigationLink path="/" textContent="Главная" />
+          <NavigationLink path="/game" textContent="Игра" />
+          <NavigationLink path="/gallery" textContent="Галерея" />
         </ul>
       </nav>
     </header>

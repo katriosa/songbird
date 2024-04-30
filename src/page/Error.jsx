@@ -2,13 +2,11 @@ import { useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
   const error = useRouteError();
-
   return (
-    <>
-      <h1>Oh no!</h1>
-      <p>An error occurred</p>
-      <p>{error.message}</p>
-    </>
+    <div className="centred">
+      <h1>Страница не найдена! (404)</h1>
+      <p>{error.data}</p>
+    </div>
   );
 };
 export default ErrorPage;
