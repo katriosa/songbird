@@ -1,7 +1,7 @@
-import classes from "./VariantButtons.module.css";
-import VariantItem from "./VariantItem";
+import classes from "./BirdNameSelector.module.css";
+import BirdButton from "./BirdButton";
 
-const VariantButtons = ({
+const BirdNameSelector = ({
   levelDataArr,
   compareBirdId,
   correctBirdId,
@@ -13,7 +13,7 @@ const VariantButtons = ({
       <section className={classes.wrapper}>
         <ul className={classes.list}>
           {levelDataArr.map((item) => (
-            <VariantItem
+            <BirdButton
               title={item.name}
               key={item.id}
               id={item.id}
@@ -35,4 +35,4 @@ const VariantButtons = ({
     </>
   );
 };
-export default VariantButtons;
+export default BirdNameSelector;

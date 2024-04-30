@@ -1,4 +1,4 @@
-import Modal from "../UI/Modal";
+import Modal from "../../../UI/Modal";
 import { Link } from "react-router-dom";
 import classes from "./ResultWindow.module.css";
 

@@ -1,7 +1,7 @@
-import LazyImage from "../Lazyimage/LazyImage";
-import classes from "./VariantViewItem.module.css";
+import LazyImage from "../../../Lazyimage/LazyImage";
+import classes from "./BirdInfoItem.module.css";
 
-const VariantViewItem = ({ clickedBird }) => {
+const BirdInfoItem = ({ clickedBird }) => {
   return (
     <div className={classes.container}>
       <div className={classes.text}>
@@ -16,4 +16,4 @@ const VariantViewItem = ({ clickedBird }) => {
     </div>
   );
 };
-export default VariantViewItem;
+export default BirdInfoItem;

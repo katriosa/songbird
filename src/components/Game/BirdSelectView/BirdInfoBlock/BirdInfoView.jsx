@@ -1,7 +1,7 @@
-import classes from "./VariantView.module.css";
-import VariantViewItem from "./VariantViewItem";
+import classes from "./BirdInfoView.module.css";
+import BirdInfoItem from "./BirdInfoItem";
 
-const VariantView = ({ clickedBirdData }) => {
+const BirdInfoView = ({ clickedBirdData }) => {
   const defaultContent = (
     <section className={classes.wrapper}>
       <div className={classes.default}>
@@ -13,10 +13,10 @@ const VariantView = ({ clickedBirdData }) => {
   if (clickedBirdData) {
     return (
       <section className={classes.wrapper}>
-        <VariantViewItem clickedBird={clickedBirdData} />
+        <BirdInfoItem clickedBird={clickedBirdData} />
       </section>
     );
   }
   return defaultContent;
 };
-export default VariantView;
+export default BirdInfoView;

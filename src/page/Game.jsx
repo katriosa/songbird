@@ -1,10 +1,10 @@
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
-import HeaderLevels from "../components/HeaderLevels";
-import SecretBlock from "../components/SecretBlock";
-import VariantSelectView from "../components/VariantSelectView/VariantSelectView";
+import HeaderLevels from "../components/Game/HeaderLevels/HeaderLevels";
+import SecretBlock from "../components/Game/SecretBlock/SecretBlock";
+import BirdSelectView from "../components/Game/BirdSelectView/BirdSelectView";
 import Wrapper from "../UI/Wrapper";
-import ResultWindow from "../components/ResultWindow";
+import ResultWindow from "../components/Game/ResultWindow/ResultWindow";
 
 const GamePage = () => {
   const loadedBirdsData = useSelector((state) => state.birds.birdsData);
@@ -95,7 +95,7 @@ const GamePage = () => {
             randomBird={randomBird}
             score={levelScore}
           />
-          <VariantSelectView
+          <BirdSelectView
             setNumberOfSelectedLevel={setNumberOfSelectedLevel}
             numberOfSelectedLevel={numberOfSelectedLevel}
             randomBird={randomBird}

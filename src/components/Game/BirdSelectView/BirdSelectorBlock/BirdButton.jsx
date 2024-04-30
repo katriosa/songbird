@@ -1,7 +1,7 @@
-import classes from "./VariantItem.module.css";
+import classes from "./BirdButton.module.css";
 import { useCallback, useMemo } from "react";
 
-const VariantItem = ({
+const BirdButton = ({
   id,
   title,
   correctBirdId,
@@ -29,4 +29,4 @@ const VariantItem = ({
     </button>
   );
 };
-export default VariantItem;
+export default BirdButton;

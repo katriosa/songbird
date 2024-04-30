@@ -1,8 +1,8 @@
-import classes from "./VariantSelectView.module.css";
-import VariantButtons from "./VariantButtons";
-import VariantView from "./VariantView";
+import classes from "./BirdSelectView.module.css";
+import BirdNameSelector from "./BirdSelectorBlock/BirdNameSelector";
+import BirdInfoView from "./BirdInfoBlock/BirdInfoView";
 
-const VariantSelectView = ({
+const BirdSelectView = ({
   setNumberOfSelectedLevel,
   numberOfSelectedLevel,
   levelDataArr,
@@ -15,7 +15,7 @@ const VariantSelectView = ({
 }) => {
   return (
     <main className={classes.main}>
-      <VariantButtons
+      <BirdNameSelector
         setNumberOfSelectedLevel={setNumberOfSelectedLevel}
         numberOfSelectedLevel={numberOfSelectedLevel}
         levelDataArr={levelDataArr}
@@ -25,7 +25,7 @@ const VariantSelectView = ({
         resetBirdIds={resetBirdIds}
         changeLevelHandler={changeLevelHandler}
       />
-      <VariantView
+      <BirdInfoView
         levelDataArr={levelDataArr}
         correctBirdId={correctBirdId}
         incorrectBirdId={incorrectBirdId}
@@ -34,4 +34,4 @@ const VariantSelectView = ({
     </main>
   );
 };
-export default VariantSelectView;
+export default BirdSelectView;

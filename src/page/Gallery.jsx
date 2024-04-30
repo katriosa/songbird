@@ -1,18 +1,12 @@
 import classes from "./Gallery.module.css";
-import { useCallback, useState } from "react";
-import ImageSlider from "../components/ImageSlider";
+import { useCallback, useMemo, useState } from "react";
+import ImageSlider from "../components/Gallery/ImageSlider";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 
 const GalleryPage = () => {
   const { birdsData } = useSelector((state) => state.birds);
-  const [allBirds, setAllbirds] = useState(null);
 
-  useEffect(() => {
-    if (birdsData) {
-      setAllbirds(birdsData.flat());
-    }
-  }, [birdsData]);
+  const allBirds = birdsData?.flat();
 
   const [clickedTileID, setClickedTileID] = useState(null);
 
@@ -20,29 +14,30 @@ const GalleryPage = () => {
     setClickedTileID(tileId);
   }, []);
 
-  const renderTiles = () => {
+  const renderTiles = useMemo(() => {
     return (
       <ul className={classes.container}>
-        {allBirds.map((tile) => {
-          return (
-            <li
-              className={classes.img}
-              onClick={onTileIDClick(tile.id)}
-              key={tile.id}
-            >
-              <img src={tile.image} alt={tile.name} />
-              <div className={classes.title}>{tile.name}</div>
-            </li>
-          );
-        })}
+        {allBirds &&
+          allBirds.map((tile) => {
+            return (
+              <li
+                className={classes.img}
+                onClick={() => onTileIDClick(tile.id)}
+                key={tile.id}
+              >
+                <img src={tile.image} alt={tile.name} />
+                <div className={classes.title}>{tile.name}</div>
+              </li>
+            );
+          })}
       </ul>
     );
-  };
+  }, [allBirds, onTileIDClick]);
 
   return (
     <div className={classes.gallery}>
       <div className={classes["main-container"]}>
-        {allBirds && renderTiles()}
+        {renderTiles}
         {clickedTileID && allBirds && (
           <ImageSlider
             allBirds={allBirds}
