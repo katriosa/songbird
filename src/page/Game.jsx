@@ -47,8 +47,10 @@ const GamePage = () => {
     setClickedBirdId(buttonId);
     if (buttonId === randomBird.id) {
       setCorrectBirdId(buttonId);
+      return true;
     } else {
       setIncorrectBirdId(buttonId);
+      return false;
     }
   };
 

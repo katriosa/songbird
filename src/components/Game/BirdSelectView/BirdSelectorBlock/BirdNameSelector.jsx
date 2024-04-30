@@ -1,5 +1,6 @@
 import classes from "./BirdNameSelector.module.css";
 import BirdButton from "./BirdButton";
+import { useCallback, useState } from "react";
 
 const BirdNameSelector = ({
   levelDataArr,
@@ -8,6 +9,15 @@ const BirdNameSelector = ({
   incorrectBirdId,
   changeLevelHandler,
 }) => {
+  const [isButtonsActive, setButtonsActive] = useState(true);
+  const onSelectCorrectBird = useCallback(() => {
+    setButtonsActive(false);
+  }, []);
+
+  const onNextClick = useCallback(() => {
+    setButtonsActive(true);
+    changeLevelHandler();
+  }, [changeLevelHandler]);
   return (
     <>
       <section className={classes.wrapper}>
@@ -21,12 +31,14 @@ const BirdNameSelector = ({
               correctBirdId={correctBirdId}
               incorrectBirdId={incorrectBirdId}
               compareBirdId={compareBirdId}
+              onSelectCorrectBird={onSelectCorrectBird}
+              isActive={isButtonsActive}
             />
           ))}
         </ul>
         <div className={classes["btn-wrapper"]}>
           <div className={classes.button}>
-            <button onClick={changeLevelHandler} disabled={!correctBirdId}>
+            <button onClick={onNextClick} disabled={!correctBirdId}>
               Дальше
             </button>
           </div>

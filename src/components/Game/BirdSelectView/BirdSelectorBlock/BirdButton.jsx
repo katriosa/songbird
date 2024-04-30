@@ -7,13 +7,22 @@ const BirdButton = ({
   correctBirdId,
   incorrectBirdId,
   compareBirdId,
+  onSelectCorrectBird,
+  isActive,
 }) => {
   const clickButtonHandler = useCallback(() => {
-    compareBirdId(id);
-  }, [compareBirdId, id]);
+    if (isActive) {
+      const isCorrectBirdSelected = compareBirdId(id);
+      if (isCorrectBirdSelected) {
+        onSelectCorrectBird(false);
+      }
+    }
+  }, [id, isActive, compareBirdId, onSelectCorrectBird]);
 
   const buttonClass = useMemo(() => {
-    const defaultClass = classes["btn-item"];
+    const defaultClass = isActive
+      ? classes["btn-item"] + " " + classes["btn-active-item"]
+      : classes["btn-item"];
     if (id === correctBirdId) {
       return `${defaultClass} ${classes.correct}`;
     }
@@ -21,7 +30,7 @@ const BirdButton = ({
       return `${defaultClass} ${classes.incorrect}`;
     }
     return defaultClass;
-  }, [id, correctBirdId, incorrectBirdId]);
+  }, [isActive, id, correctBirdId, incorrectBirdId]);
 
   return (
     <button className={buttonClass} onClick={clickButtonHandler}>
