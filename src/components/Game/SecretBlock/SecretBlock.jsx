@@ -25,7 +25,7 @@ const SecretBlock = ({ randomBird, isBirdGuessed, score }) => {
               <h3>{score}</h3>
             </div>
           </div>
-          <h2>******</h2>
+          <h2>{birdData().title}</h2>
           <audio src={randomBird.audio} controls></audio>
         </div>
       </div>
