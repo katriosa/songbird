@@ -9,6 +9,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { fetchBirdsRequest } from "./redux/birdsActions";
 import { useSelector } from "react-redux";
 import { ReactComponent as Spinner } from "./assets/spinner.svg";
+import { anonymousLogin } from "./firebase";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,17 @@ function App() {
   const loadedBirdsData = useSelector((state) => state.birds.birdsData);
 
   useEffect(() => {
-    if (!loadedBirdsData) {
-      dispatch(fetchBirdsRequest());
-    } else {
-      setLoading(false);
-    }
+    anonymousLogin()
+      .then(() => {
+        if (!loadedBirdsData) {
+          dispatch(fetchBirdsRequest());
+        } else {
+          setLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error("Error anonymous logging in:", error);
+      });
   }, [dispatch, loadedBirdsData]);
 
   const content = useMemo(() => {
