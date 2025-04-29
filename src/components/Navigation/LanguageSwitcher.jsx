@@ -15,18 +15,23 @@ const LanguageSwitcher = () => {
 
   const currentLanguage = i18n.language;
 
+  const getButtonClass = (lng) =>
+    `${classes.languageButton} ${
+      currentLanguage === lng ? classes.activeButton : ""
+    }`;
+
   return (
     <div className={classes.switcher}>
       <button
         onClick={() => changeLanguage("en")}
-        className={currentLanguage === "en" ? classes.active : ""}
+        className={getButtonClass("en")}
       >
         EN
       </button>
       <span>|</span>
       <button
         onClick={() => changeLanguage("ru")}
-        className={currentLanguage === "ru" ? classes.active : ""}
+        className={getButtonClass("ru")}
       >
         RU
       </button>

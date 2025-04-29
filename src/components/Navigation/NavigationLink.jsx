@@ -6,7 +6,9 @@ const NavigationLink = ({ path, textContent }) => {
     <li>
       <NavLink
         to={path}
-        className={({ isActive }) => (isActive ? classes.active : undefined)}
+        className={({ isActive }) =>
+          isActive ? classes.activeLink : undefined
+        }
         end
       >
         {textContent}

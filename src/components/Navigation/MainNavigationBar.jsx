@@ -8,15 +8,16 @@ const MainNavigationBar = () => {
 
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>
+      <div className={classes.logoContainer}>
         <img
           src="https://birds-quiz.netlify.app/static/media/logo.4f82cd73.svg"
           alt="logo"
+          className={classes.logoImage}
         />
       </div>
-      <nav className={classes.navigation}>
+      <nav className={classes.navLinksContainer}>
         <LanguageSwitcher />
-        <ul>
+        <ul className={classes.navLinksList}>
           <NavigationLink path="/" textContent={t("navigation.home")} />
           <NavigationLink path="/game" textContent={t("navigation.game")} />
           <NavigationLink

@@ -4,17 +4,16 @@
   align-items: center;
 }
 
-button {
+.languageButton {
   background-color: transparent;
   border: none;
   color: inherit;
-
   cursor: pointer;
-  /* font-weight: bold; */
+  font-weight: bold;
   font-size: inherit;
   padding: 0;
 }
 
-.active {
+.activeButton {
   color: #e6e6e6;
 }
