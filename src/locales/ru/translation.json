@@ -1,0 +1,27 @@
+{
+  "navigation": {
+    "home": "Главная",
+    "game": "Игра",
+    "gallery": "Галерея"
+  },
+  "homePage": {
+    "title": "Угадай птицу по голосу",
+    "startButton": "Начать",
+    "author": "Автор проекта: "
+  },
+  "gamePage": {
+    "levelTitle": "Уровень {{levelNumber}}",
+    "scoreTitle": "Счёт",
+    "nextButton": "Дальше",
+    "defaultText": "Послушайте плеер. Выберите птицу из списка.",
+    "result": {
+      "title": "Поздравляем!",
+      "description": "Вы набрали {{totalScore}} из {{maxScore}} баллов!",
+      "restartButton": "Начать сначала",
+      "viewGalleryButton": "Посмотреть галерею"
+    }
+  },
+  "errorPage": {
+    "notFound": "Страница не найдена! (404)"
+  }
+}

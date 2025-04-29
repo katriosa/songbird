@@ -1,7 +1,9 @@
 import { useCallback } from "react";
 import classes from "./SecretBlock.module.css";
+import { useTranslation } from "react-i18next";
 
 const SecretBlock = ({ randomBird, isBirdGuessed, score }) => {
+  const { t } = useTranslation();
   const birdData = useCallback(() => {
     if (isBirdGuessed) {
       return { image: randomBird.image, title: randomBird.name };
@@ -21,7 +23,7 @@ const SecretBlock = ({ randomBird, isBirdGuessed, score }) => {
         <div className={classes["secret-details"]}>
           <div className={classes["score-wrapper"]}>
             <div className={classes["score-min"]}>
-              <h3>Счёт</h3>
+              <h3>{t("gamePage.scoreTitle")}</h3>
               <h3>{score}</h3>
             </div>
           </div>
@@ -30,7 +32,7 @@ const SecretBlock = ({ randomBird, isBirdGuessed, score }) => {
         </div>
       </div>
       <div className={classes.score}>
-        <h3>Счёт</h3>
+        <h3>{t("gamePage.scoreTitle")}</h3>
         <h3>{score}</h3>
       </div>
     </section>

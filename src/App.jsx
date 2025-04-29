@@ -10,6 +10,7 @@ import { fetchBirdsRequest } from "./redux/birdsActions";
 import { useSelector } from "react-redux";
 import { ReactComponent as Spinner } from "./assets/spinner.svg";
 import { anonymousLogin } from "./firebase";
+import "./i18n";
 
 const router = createBrowserRouter([
   {

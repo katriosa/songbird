@@ -3,8 +3,10 @@ import classes from "./Home.module.css";
 import { Link } from "react-router-dom";
 import owl from "../assets/owl.json";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
+  const { t } = useTranslation();
   return (
     <>
       <div className={classes["bg-image"]}>
@@ -18,16 +20,17 @@ const HomePage = () => {
             ></Player>
           </div>
           <div className={classes.header}>
-            <h1>Угадай птицу по голосу</h1>
+            <h1>{t("homePage.title")}</h1>
           </div>
           <div className={classes.startButton}>
-            <Link to="/game">Начать</Link>
+            <Link to="/game">{t("homePage.startButton")}</Link>
           </div>
         </main>
       </div>
       <footer className={classes.footer}>
         <p>
-          Автор: <a href="https://github.com/katriosa">katriosa</a>
+          {t("homePage.author")}
+          <a href="https://github.com/katriosa">katriosa</a>
         </p>
       </footer>
     </>

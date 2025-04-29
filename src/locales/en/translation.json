@@ -1,0 +1,27 @@
+{
+  "navigation": {
+    "home": "Home",
+    "game": "Game",
+    "gallery": "Gallery"
+  },
+  "homePage": {
+    "title": "Guess the bird by its voice",
+    "startButton": "Start",
+    "author": "Created by "
+  },
+  "gamePage": {
+    "levelTitle": "Level {{levelNumber}}",
+    "scoreTitle": "Score",
+    "nextButton": "Next",
+    "defaultText": "Listen to the player. Select a bird from the list.",
+    "result": {
+      "title": "Congratulations!",
+      "description": "You scored {{totalScore}} out of {{maxScore}} points!",
+      "restartButton": "Restart",
+      "viewGalleryButton": "View Gallery"
+    }
+  },
+  "errorPage": {
+    "notFound": "Page not found! (404)"
+  }
+}

@@ -1,6 +1,7 @@
 import classes from "./BirdNameSelector.module.css";
 import BirdButton from "./BirdButton";
 import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const BirdNameSelector = ({
   levelDataArr,
@@ -9,6 +10,7 @@ const BirdNameSelector = ({
   incorrectBirdId,
   changeLevelHandler,
 }) => {
+  const { t } = useTranslation();
   const [isButtonsActive, setButtonsActive] = useState(true);
   const onSelectCorrectBird = useCallback(() => {
     setButtonsActive(false);
@@ -39,7 +41,7 @@ const BirdNameSelector = ({
         <div className={classes["btn-wrapper"]}>
           <div className={classes.button}>
             <button onClick={onNextClick} disabled={!correctBirdId}>
-              Дальше
+              {t("gamePage.nextButton")}
             </button>
           </div>
         </div>

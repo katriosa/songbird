@@ -1,7 +1,11 @@
 import classes from "./MainNavigationBar.module.css";
 import NavigationLink from "./NavigationLink";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const MainNavigationBar = () => {
+  const { t } = useTranslation();
+
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
@@ -10,11 +14,15 @@ const MainNavigationBar = () => {
           alt="logo"
         />
       </div>
-      <nav>
+      <nav className={classes.navigation}>
+        <LanguageSwitcher />
         <ul>
-          <NavigationLink path="/" textContent="Главная" />
-          <NavigationLink path="/game" textContent="Игра" />
-          <NavigationLink path="/gallery" textContent="Галерея" />
+          <NavigationLink path="/" textContent={t("navigation.home")} />
+          <NavigationLink path="/game" textContent={t("navigation.game")} />
+          <NavigationLink
+            path="/gallery"
+            textContent={t("navigation.gallery")}
+          />
         </ul>
       </nav>
     </header>

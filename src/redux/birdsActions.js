@@ -19,9 +19,10 @@ export const fetchBirdsRequest = () => {
 
     try {
       const idToken = await user.getIdToken();
+      const lang = localStorage.getItem("i18nextLng") || "en";
 
       const response = await fetch(
-        `https://songbird-ff3d2-default-rtdb.firebaseio.com/birdsData.json?auth=${idToken}`
+        `https://songbird-ff3d2-default-rtdb.firebaseio.com/birdsData/${lang}.json?auth=${idToken}`
       );
 
       if (!response.ok) {

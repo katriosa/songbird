@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: calc(10px + 1.5vmin);
-  color: white;
+  color: #707070;
   padding: 0 20px;
 }
 
@@ -30,8 +30,15 @@
   margin: 0 10px;
 }
 
-.header a {
+a {
   text-decoration: none;
-  color: #f5f3ea;
+  color: inherit;
   font-weight: bold;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
 }

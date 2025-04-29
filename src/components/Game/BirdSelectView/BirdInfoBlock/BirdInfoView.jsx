@@ -1,12 +1,12 @@
 import classes from "./BirdInfoView.module.css";
 import BirdInfoItem from "./BirdInfoItem";
+import { useTranslation } from "react-i18next";
 
 const BirdInfoView = ({ clickedBirdData }) => {
+  const { t } = useTranslation();
   const defaultContent = (
     <section className={classes.wrapper}>
-      <div className={classes.default}>
-        Послушайте плеер. Выберите птицу из списка.
-      </div>
+      <div className={classes.default}>{t("gamePage.defaultText")}</div>
     </section>
   );
 
