@@ -2,7 +2,7 @@
 
 Link: https://songbird-ff3d2.web.app/
 
-Songbird is a quiz app based on guessing birds by their voices. The website consists of a home page, a game page and a gallery, thanks to the use of React Routing. A firebase is used to store and display data.
+Songbird is a quiz app based on guessing birds by their voices. Implemented a SPA with multiple pages (home, game, gallery) using React Router. A firebase is used to store and display data. Implemented multilingual support and dynamic language switching using i18next.
 
 ### Game mechanics:
 - The bird in the question block is randomly selected from the list of possible answers.
@@ -14,8 +14,8 @@ Songbird is a quiz app based on guessing birds by their voices. The website cons
 - After the last question, the score of the game is displayed: "You scored x points out of 30 possible". The player is invited to take the quiz again or view the gallery.
 
 Screenshots:
-![songbird-home](https://github.com/katriosa/songbird/assets/112644662/d608bfd6-744c-42b9-8e56-16af950db188)
+![songbird-home1](https://github.com/user-attachments/assets/9b9efcff-5721-4aea-b2f0-db057912424c)
 
-![songbird-game](https://github.com/katriosa/songbird/assets/112644662/bd612287-ab5f-40fa-ad95-5a408dde4122)
+![songbird-game1](https://github.com/user-attachments/assets/d670be0c-f506-442e-8177-8e483f77367f)
 
-![songbird-gallery](https://github.com/katriosa/songbird/assets/112644662/ac3ef978-ab15-4354-ae57-d961bb3ecf06)
+![songbird-gallery1](https://github.com/user-attachments/assets/467df310-822d-4d3a-9048-6acd62654fec)
